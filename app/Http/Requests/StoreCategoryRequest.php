@@ -23,7 +23,7 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'description' => 'nullable|string',
         ];
     }
 
@@ -31,7 +31,6 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'name.required' => 'Field "name" is required.',
-            'description.required' => 'Field "description" is required.',
         ];
     }
 }

@@ -23,9 +23,9 @@ class StoreSupplierRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'state' => 'string|max:255',
-            'city' => 'string|max:255',
-            'address' => 'string|max:255',
+            'state' => 'nullable|string|max:255',
+            'city' => 'nullable|string|max:255',
+            'address' => 'nullable|string|max:255',
             'phone' => 'required|string|max:255',
             'email' => 'required|email',
         ];

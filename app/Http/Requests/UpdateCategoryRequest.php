@@ -22,8 +22,8 @@ class UpdateCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
+            'name' => 'sometimes|required|string|max:255',
+            'description' => 'nullable|string',
         ];
     }
 
@@ -31,7 +31,6 @@ class UpdateCategoryRequest extends FormRequest
     {
         return [
             'name.required' => 'Field "name" is required.',
-            'description.required' => 'Field "description" is required.',
         ];
     }
 }
