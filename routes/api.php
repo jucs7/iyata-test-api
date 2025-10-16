@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,9 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('suppliers', SupplierController::class)
             ->only(['store', 'update', 'destroy']);
 
+        Route::apiResource('products', ProductController::class)
+            ->only(['store', 'update', 'destroy']);
+
     });
 
     /**
@@ -37,6 +41,9 @@ Route::prefix('v1')->group(function () {
             ->only(['index', 'show']);
         
         Route::apiResource('suppliers', SupplierController::class)
+            ->only(['index', 'show']);
+        
+        Route::apiResource('products', ProductController::class)
             ->only(['index', 'show']);
 
     });
